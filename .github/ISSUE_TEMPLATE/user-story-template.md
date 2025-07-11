@@ -1,7 +1,7 @@
 ---
 name: user story template
 about: template for user stories to be filled out on each issue creation
-title: 'User Story: ...'
+title: 'User Story: '
 labels: ''
 assignees: ''
 
