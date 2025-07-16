@@ -1,18 +1,19 @@
 """"Displays feed from camera"""
 import cv2
-
+# Opens USB camera
 cap = cv2.VideoCapture(0)
 
-while(True):
-    ret, frame = cap.read()
-    if not ret:
-        break
+# Checks if the camera has opened successfully
+if not cap.isOpened():
+    print("Could not open camera")
+    exit()
 
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    cv2.imshow('frame', gray)
-    
-if cv2.waitKey(1) & 0xFF == ord('q'):
-    break
+# Reads a single frame
+ret, frame = cap.read()
 
-cap.release()
-cv2.destroyAllWindows()
+# Shows the image if the frame is corrrectly read
+if ret:
+    cv2.imshow("captured Frame", frame)
+    cv2.waitKey(0)
+else:
+    print("Could not read frame")
