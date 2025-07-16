@@ -1,5 +1,6 @@
 """"Displays feed from camera"""
 import cv2
+
 # Opens USB camera
 cap = cv2.VideoCapture(0)
 
