@@ -4,7 +4,7 @@ import numpy as np
 
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 
-known_img = cv2.imread("Girl2.jpg")
+known_img = cv2.imread("me.jpg")
 known_gray = cv2.cvtColor(known_img, cv2.COLOR_BGR2GRAY)
 
 known_faces = face_cascade.detectMultiScale(known_gray, 1.1, 5)
@@ -37,7 +37,7 @@ while True:
 
         diff = cv2.absdiff(face_resized, known_face)
         score = np.sum(diff)
-        threshold = 100000
+        threshold = 360000
 
         if score < threshold:
             label = "Matched"

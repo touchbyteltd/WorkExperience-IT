@@ -2,7 +2,7 @@
 import cv2
 
 # loads image
-img = cv2.imread("partialside.jpeg")
+img = cv2.imread("girl.jpeg")
 
 # converts to grayscale
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
